@@ -1,7 +1,7 @@
-// First, import variables
+// #variables
 @import 'variables';
 
-// Base styles
+// #base
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +15,8 @@ html, body {
 body {
     min-height: 100vh;
     font-family: $font-family--primary;
-    background-color: $black;
-    color: $white;
+    
+    
 }
 
 // Typography defaults
@@ -27,9 +27,22 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: inherit;
+    
 }
 
 ul, ol {
     list-style: none;
+}
+// Medium Devices (768px and up)
+@media (min-width: 768px) {
+    body {
+        font-size: 1rem; 
+    }
+}
+
+// Large Devices (992px and up)
+@media (min-width: 992px) {
+    p {
+        line-height: 1.6;
+    }
 }
