@@ -20,14 +20,37 @@
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     position:fixed;
-    padding: 20px;
+    padding: 25px;
     z-index: 1;
     overflow-y:visible;
     float: left;
     color: white;
-    margin: 15px 0;
+}
+
+// Hamburger Menu
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $blue;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+        border-radius: 3px;
+    }
 }
 
 
@@ -35,7 +58,6 @@
     list-style: none;
     background-color: $blue;
     padding: 0;
-    margin: 15px 0;
     color: white;
     gap: 10px;
     
@@ -43,29 +65,22 @@
 
 .sidebar-menu ul li {
     text-align: center;
-    margin: 15px 0;
+    padding-bottom: 10px;
     color: white;
 }
 
 .sidebar-social {
-    margin-top: auto;
     display: flex;
     flex-direction: row;
-    margin: 15px 0;
-    bottom: 15px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-right: 2px;
     color: white;
-    gap: 10px;
-
+    padding-bottom: 20px;       
+    
 }
-
-.sidebar-footer {
-    margin-top: 50px;
-    margin-bottom: 15px;
-    bottom: 0;
-    color: white;
-    gap: 10px;
-
-}
+// Main
 
 .main-container {
     display: flex;
@@ -126,9 +141,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $blue;
-    color: $white;
-    z-index: 1;
+    background-color: white;
+    color: $blue;
+    z-index: 0;
+}
+
+// Small Devices (576px and below)
+@media (max-width: 575px) {
+
+    .sidebar-container {
+        display: none; // no sidebar
+    }
+    .hamburger-menu {
+        display: block;  // Show only at small viewport
+    }
+
 }
 
 // Small Devices (576px and up)
@@ -139,6 +166,9 @@
     .main-container {
         margin-left: 220px;
         width: calc(100% - 220px);
+    }
+    .hamburger-menu {
+        display: none;  // Show only at small viewport
     }
 }
 
@@ -151,12 +181,18 @@
         margin-left: 250px;
         width: calc(100% - 250px);
     }
+    .hamburger-menu {
+        display: none;  // Show only at small viewport
+    }
 }
 
 // Large Devices (992px and up)
 @media (min-width: 992px) {
     .image-container {
         justify-content: flex-start; // Align hero image properly
+    }
+    .hamburger-menu {
+        display: none;  // Show only at small viewport
     }
 }
 
@@ -165,5 +201,8 @@
     .main-container {
         max-width: 1200px;
         
+    }
+    .hamburger-menu {
+        display: none;  // Show only at small viewport
     }
 }
