@@ -1,7 +1,7 @@
 //Sidebbar Layout
 .page-wrapper {
     max-width: 1200px; 
-    width: 100%; 
+    width: 100vw; 
     margin: 0 auto; 
     padding: 0 20px; 
     min-height: 100vh; 
@@ -11,39 +11,25 @@
 
 
 .sidebar-container {
-    width: 200px;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $blue;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position:fixed;
-    padding: 25px;
-    z-index: 1;
-    overflow-y:visible;
-    float: left;
-    color: white;
+    display: none;  
 }
 
 // Hamburger Menu
-
 .hamburger-menu {
+    display:block;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: 15px;
     position: fixed;
     top: 15px;
-    right: 15px;
-    z-index: 1000;
+    left: 15px;
+    z-index: 2;
 
     span {
-        display: block;
+        display: flex;
         width: 25px;
         height: 3px;
         background-color: $blue;
@@ -54,32 +40,8 @@
 }
 
 
-.sidebar-menu ul {
-    list-style: none;
-    background-color: $blue;
-    padding: 0;
-    color: white;
-    gap: 10px;
-    
-}
 
-.sidebar-menu ul li {
-    text-align: center;
-    padding-bottom: 10px;
-    color: white;
-}
 
-.sidebar-social {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-right: 2px;
-    color: white;
-    padding-bottom: 20px;       
-    
-}
 // Main
 
 .main-container {
@@ -103,86 +65,111 @@
 }
 
 
-
 .image-container {
-    width:fit-content;
-    height:fit-content;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
-}
-
-.hero-container {
-    width: 80vh;
-    height: 90vh;
     position: relative;
-    overflow: hidden;
-    z-index: 0;
-}
+    z-index: -1;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    background-image: url(../img/Web-Dev-Asif-Background.jpg);
 
-.hero-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 25px;
-    z-index: 0;
-    overflow: hidden;
-}
-
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    color: $blue;
-    z-index: 0;
-}
-
-// Small Devices (576px and below)
-@media (max-width: 575px) {
-
-    .sidebar-container {
-        display: none; // no sidebar
-    }
-    .hamburger-menu {
-        display: block;  // Show only at small viewport
     }
 
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 90;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: 100%;       
+    
 }
+
 
 // Small Devices (576px and up)
 @media (min-width: 576px) {
     .sidebar-container {
-        width: 220px; // Slightly smaller sidebar
-    }
-    .main-container {
-        margin-left: 220px;
-        width: calc(100% - 220px);
-    }
-    .hamburger-menu {
-        display: none;  // Show only at small viewport
+        display: flex;
+        width: 180px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $blue;
+        border-right: 1px solid #ddd;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px;
+        z-index: 0;
+        overflow-y: visible;
+        color: white;
     }
 }
+
+    .sidebar-menu ul {
+        list-style: none;
+        background-color: $blue;
+        padding: 0;
+        color: white;
+        gap: 10px;
+        
+    }
+    
+    .sidebar-menu ul li {
+        text-align: center;
+        padding-bottom: 10px;
+        color: white;
+    }
+    
+    .sidebar-social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin-right: 2px;
+        color: white;
+        padding-bottom: 20px;       
+        
+    }
+
+
+    .main-container {
+        margin-left: 180px;
+        width: 100%;
+    }
+    .footer {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        width: 100vw;
+        height: 80px;
+        background-color: white;
+        color: $blue;
+        z-index: 0;
+    }
 
 // Medium Devices (768px and up)
 @media (min-width: 768px) {
     .sidebar-container {
-        width: 250px; // Restore full sidebar width
+        width: 200px; // Restore full sidebar width
     }
     .main-container {
-        margin-left: 250px;
-        width: calc(100% - 250px);
-    }
-    .hamburger-menu {
-        display: none;  // Show only at small viewport
+        margin-left: 200px;
+        width: calc(100% - 200px);
     }
 }
 
@@ -191,9 +178,7 @@
     .image-container {
         justify-content: flex-start; // Align hero image properly
     }
-    .hamburger-menu {
-        display: none;  // Show only at small viewport
-    }
+
 }
 
 // Extra Large Devices (1200px and up)
@@ -201,8 +186,5 @@
     .main-container {
         max-width: 1200px;
         
-    }
-    .hamburger-menu {
-        display: none;  // Show only at small viewport
     }
 }
