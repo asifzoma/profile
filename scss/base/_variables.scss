@@ -1,8 +1,10 @@
 // Variable Colors
 $black: #000;
 $white: #fff;
-$blue: #23a7b5;
-$orange: #f6765a;
+$primary-color: #23a7b5;
+$secondary-color: #f6765a;
+$background-color: #f5f5f5;
+$border-color: #e0e0e0;
 
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -10,9 +12,22 @@ $orange: #f6765a;
 // Font Family
 $font-family--primary: 'Noto Sans', sans-serif;
 $font-family--secondary: 'Work Sans', sans-serif;
+$font-family--tertiary: 'Poppins', sans-serif;
+
 
 // Breakpoints
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px; 
 $breakpoint-lg: 992px;  
 $breakpoint-xl: 1200px; 
+
+// Sidebar Width
+$sidebar-width: 180px;
+
+// Hamburger Menu
+$hamburger-menu-width: 40px;
+$hamburger-menu-height: 30px;
+$hamburger-menu-padding: 0;
+$hamburger-menu-border: none;
+$hamburger-menu-background: none;
+

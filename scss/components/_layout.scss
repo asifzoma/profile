@@ -1,190 +1,213 @@
-//Sidebbar Layout
+// Page Wrapper
 .page-wrapper {
-    max-width: 1200px; 
-    width: 100vw; 
-    margin: 0 auto; 
-    padding: 0 20px; 
-    min-height: 100vh; 
     display: flex;
-    flex-direction: column;
-}
-
-
-.sidebar-container {
-    display: none;  
-}
-
-// Hamburger Menu
-.hamburger-menu {
-    display:block;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 2;
-
-    span {
-        display: flex;
-        width: 25px;
-        height: 3px;
-        background-color: $blue;
-        margin: 5px 0;
-        transition: all 0.3s ease;
-        border-radius: 3px;
-    }
-}
-
-
-
-
-// Main
-
-.main-container {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 0px;
-    padding-bottom: 10px;
 }
 
-
-.header {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-    height: auto; 
-    position: relative; 
-}
-
-
-.image-container {
-    width: 100vw;
+// Sidebar (Fixed on Large Screens)
+.sidebar-container {
+    width: $sidebar-width;
     height: 100vh;
+    background-color: $primary-color;
+    color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    z-index: -1;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 0px;
-    padding-bottom: 10px;
-    background-image: url(../img/Web-Dev-Asif-Background.jpg);
+    justify-content: space-between;
 
+    .sidebar-header h3 a {
+        color: $white;
+        text-decoration: none;
+        font-size: 24px;
     }
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 90;
-    font-weight: bold;
-    text-align: center;
-    width: 100%;
-    height: 100%;       
-    
-}
-
-
-// Small Devices (576px and up)
-@media (min-width: 576px) {
-    .sidebar-container {
-        display: flex;
-        width: 180px;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: $blue;
-        border-right: 1px solid #ddd;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 25px;
-        z-index: 0;
-        overflow-y: visible;
-        color: white;
-    }
-}
 
     .sidebar-menu ul {
         list-style: none;
-        background-color: $blue;
         padding: 0;
-        color: white;
-        gap: 10px;
-        
+
+        li {
+            margin: 15px 0;
+
+            a {
+                color: $white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+        }
     }
-    
-    .sidebar-menu ul li {
-        text-align: center;
-        padding-bottom: 10px;
-        color: white;
-    }
-    
+
     .sidebar-social {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        margin-right: 2px;
-        color: white;
-        padding-bottom: 20px;       
-        
+        gap: 10px;
+
+        a {
+            color: $white;
+            font-size: 20px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+// Main Content (Pushes next to sidebar)
+.main-container {
+    margin-left: $sidebar-width;
+    flex: 1;
+    padding: 20px;
+    background-color: $background-color;
+}
+
+// Hero Image Section
+.image-container {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/Web-Dev-Asif-Background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white;
+    font-size: 2rem;
+}
+
+// Banner Section
+.banner {
+    text-align: center;
+    padding: 50px;
+    background-color: $white;
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
 
-
-    .main-container {
-        margin-left: 180px;
-        width: 100%;
+    p {
+        font-size: 1.2rem;
+        color: $secondary-color;
     }
-    .footer {
-        position: fixed;
+}
+
+// Portfolio Section
+.portfolio-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .project-card {
+        flex: 1 1 calc(50% - 20px);
+        background-color: $white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        p {
+            color: $secondary-color;
+        }
+    }
+}
+
+// Contact Section
+.contact {
+    text-align: center;
+    padding: 50px;
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
-        bottom: 0;
-        width: 100vw;
-        height: 80px;
-        background-color: white;
-        color: $blue;
-        z-index: 0;
-    }
+        flex-direction: column;
+        gap: 15px;
 
-// Medium Devices (768px and up)
-@media (min-width: 768px) {
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: $primary-color;
+            color: $white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+}
+
+// Footer
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $primary-color;
+    color: $white;
+}
+
+// Hamburger Menu (Hidden by Default)
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: $primary-color;
+        transition: all 0.3s ease;
+    }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
     .sidebar-container {
-        width: 200px; // Restore full sidebar width
+        display: none; // Hide sidebar on small screens
     }
+
     .main-container {
-        margin-left: 200px;
-        width: calc(100% - 200px);
-    }
-}
-
-// Large Devices (992px and up)
-@media (min-width: 992px) {
-    .image-container {
-        justify-content: flex-start; // Align hero image properly
+        margin-left: 0;
     }
 
-}
+    .hamburger-menu {
+        display: flex; // Show only on smaller screens
+    }
 
-// Extra Large Devices (1200px and up)
-@media (min-width: 1200px) {
-    .main-container {
-        max-width: 1200px;
-        
+    .portfolio-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        flex: 1 1 100%;
     }
 }

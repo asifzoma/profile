@@ -39,167 +39,183 @@ ul, ol {
   }
 }
 .page-wrapper {
-  max-width: 1200px;
-  width: 100vw;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
 .sidebar-container {
-  display: none;
-}
-
-.hamburger-menu {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 15px;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 2;
-}
-.hamburger-menu span {
-  display: flex;
-  width: 25px;
-  height: 3px;
-  background-color: #23a7b5;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 0px;
-  padding-bottom: 10px;
-}
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
-.image-container {
-  width: 100vw;
+  width: 180px;
   height: 100vh;
+  background-color: #23a7b5;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  z-index: -1;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 0px;
-  padding-bottom: 10px;
-  background-image: url(../img/Web-Dev-Asif-Background.jpg);
+  justify-content: space-between;
 }
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 90;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-  height: 100%;
+.sidebar-container .sidebar-header h3 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
 }
-
-@media (min-width: 576px) {
-  .sidebar-container {
-    display: flex;
-    width: 180px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #23a7b5;
-    border-right: 1px solid #ddd;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 25px;
-    z-index: 0;
-    overflow-y: visible;
-    color: white;
-  }
-}
-.sidebar-menu ul {
+.sidebar-container .sidebar-menu ul {
   list-style: none;
-  background-color: #23a7b5;
   padding: 0;
-  color: white;
+}
+.sidebar-container .sidebar-menu ul li {
+  margin: 15px 0;
+}
+.sidebar-container .sidebar-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+.sidebar-container .sidebar-social {
+  display: flex;
   gap: 10px;
 }
-
-.sidebar-menu ul li {
-  text-align: center;
-  padding-bottom: 10px;
-  color: white;
+.sidebar-container .sidebar-social a {
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease;
 }
-
-.sidebar-social {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin-right: 2px;
-  color: white;
-  padding-bottom: 20px;
+.sidebar-container .sidebar-social a:hover {
+  color: #f6765a;
 }
 
 .main-container {
   margin-left: 180px;
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.image-container {
   width: 100%;
+  height: 100vh;
+  background: url("../img/Web-Dev-Asif-Background.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.banner {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+}
+.banner h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.banner p {
+  font-size: 1.2rem;
+  color: #f6765a;
+}
+
+.portfolio-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.portfolio-container .project-card {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.portfolio-container .project-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+.portfolio-container .project-card h3 {
+  margin-top: 10px;
+}
+.portfolio-container .project-card p {
+  color: #f6765a;
+}
+
+.contact {
+  text-align: center;
+  padding: 50px;
+}
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact form input, .contact form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact form button {
+  background-color: #23a7b5;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.contact form button:hover {
+  background-color: #1b808a;
 }
 
 .footer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  width: 100vw;
-  height: 80px;
-  background-color: white;
-  color: #23a7b5;
-  z-index: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #23a7b5;
+  color: #fff;
 }
 
-@media (min-width: 768px) {
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #23a7b5;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
   .sidebar-container {
-    width: 200px;
+    display: none;
   }
   .main-container {
-    margin-left: 200px;
-    width: calc(100% - 200px);
+    margin-left: 0;
   }
-}
-@media (min-width: 992px) {
-  .image-container {
-    justify-content: flex-start;
+  .hamburger-menu {
+    display: flex;
   }
-}
-@media (min-width: 1200px) {
-  .main-container {
-    max-width: 1200px;
+  .portfolio-container {
+    flex-direction: column;
+  }
+  .project-card {
+    flex: 1 1 100%;
   }
 }/*# sourceMappingURL=style.css.map */
