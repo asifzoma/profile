@@ -27,11 +27,11 @@
             </div>
             <div class="sidebar-menu">
                 <ul>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">My Portfolio</a></li>
-                    <li><a href="#">Code Examples</a></li>
-                    <li><a href="#">SCS Scheme</a></li>
-                    <li><a href="#">Contact Me</a></li>
+                    <li><a href="about-me.html">About Me</a></li>
+                    <li><a href="index.html">My Portfolio</a></li>
+                    <li><a href="code-examples.html">Code Examples</a></li>
+                    <li><a href="SCS-scheme.html">SCS Scheme</a></li>
+                    <li><a href="contact-me.html">Contact Me</a></li>
                 </ul>
             </div>
             <div class="sidebar-social">
@@ -58,23 +58,47 @@
                 <h1>Welcome to My Portfolio</h1>
                 <p>Showcasing my journey into web development</p>
             </section>
-
-            <!-- Portfolio Section -->
-            <section id="portfolio" class="portfolio">
-                <h2>My Portfolio</h2>
-                <div class="portfolio-container">
-                    <div class="project-card">
-                        <img src="img/placeholder.jpg" alt="Project Placeholder">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here.</p>
-                    </div>
-                    <div class="project-card">
-                        <img src="img/placeholder.jpg" alt="Project Placeholder">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here.</p>
-                    </div>
+            <!-- code Examples -->
+            <section class="code-snippets">
+                <h2>Code Examples</h2>
+                <p>Explore some of my favorite code examples from projects.</p>
+            
+                <div class="snippet">
+                    <h3>CSS Flexbox Example</h3>
+                    <pre><code class="language-css">
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+                    </code></pre>
                 </div>
+            
+                <div class="snippet">
+                    <h3>SCSS Mixin Example</h3>
+                    <pre><code class="language-scss">
+            @mixin flex-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                @include flex-center;
+                height: 100vh;
+            }
+
+                    </code></pre>
+                </div>
+
+            <div class="snippet">
+                <h4>Coming Soon</h4>
+            </div>
+            
+
             </section>
+            
+            
 
             <!-- Contact Form -->
             <section id="contact" class="contact">
