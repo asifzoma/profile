@@ -179,11 +179,11 @@ ul, ol {
 }
 
 .hamburger-menu {
-  display: none;
-  position: absolute;
+  display: block;
+  position: relative;
   top: 15px;
-  right: 15px;
-  background: none;
+  left: 15px;
+  background: #fff;
   border: none;
   width: 40px;
   height: 30px;
@@ -201,6 +201,9 @@ ul, ol {
   background-color: #23a7b5;
   transition: all 0.3s ease;
 }
+.hamburger-menu:hover {
+  background-color: #23a7b5;
+}
 
 @media (max-width: 768px) {
   .sidebar-container {
@@ -217,5 +220,10 @@ ul, ol {
   }
   .project-card {
     flex: 1 1 100%;
+  }
+}
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

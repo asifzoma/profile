@@ -165,11 +165,11 @@
 
 // Hamburger Menu (Hidden by Default)
 .hamburger-menu {
-    display: none;
-    position: absolute;
+    display: block;
+    position: relative;
     top: 15px;
-    right: 15px;
-    background: none;
+    left: 15px;
+    background: $white;
     border: none;
     width: 40px;
     height: 30px;
@@ -187,7 +187,13 @@
         background-color: $primary-color;
         transition: all 0.3s ease;
     }
-}
+    &:hover {
+        background-color: $primary-color;
+    }
+
+        
+    }
+
 
 // Responsive Styles
 @media (max-width: 768px) {
@@ -211,3 +217,11 @@
         flex: 1 1 100%;
     }
 }
+
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+
