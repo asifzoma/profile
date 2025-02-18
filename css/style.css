@@ -143,6 +143,11 @@ ul, ol {
   color: #f6765a;
 }
 
+.about-me {
+  text-align: center;
+  padding: 50px;
+}
+
 .contact {
   text-align: center;
   padding: 50px;
