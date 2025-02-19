@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-.about-me, .snippet, .banner {
+#contact, .snippet, .banner {
   text-align: center;
   padding: 50px;
   background-color: #fff;
@@ -9,8 +9,26 @@
   margin: 2px;
 }
 
-.about-me, .snippet, .banner {
+.about-me, .SCS-scheme {
+  text-align: left;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2px;
+}
+
+#contact, .snippet, .banner {
   text-align: center;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2px;
+}
+
+.about-me, .SCS-scheme {
+  text-align: left;
   padding: 50px;
   background-color: #fff;
   border-radius: 8px;
@@ -79,6 +97,9 @@ ul, ol {
   text-decoration: none;
   font-size: 24px;
 }
+.sidebar-container .sidebar-header h3 a:hover {
+  color: #f6765a;
+}
 .sidebar-container .sidebar-menu ul {
   list-style: none;
   padding: 0;
@@ -91,6 +112,9 @@ ul, ol {
   text-decoration: none;
   font-size: 18px;
 }
+.sidebar-container .sidebar-menu ul li a:hover {
+  color: #f6765a;
+}
 .sidebar-container .sidebar-social {
   display: flex;
   gap: 10px;
@@ -101,6 +125,27 @@ ul, ol {
   transition: color 0.3s ease;
 }
 .sidebar-container .sidebar-social a:hover {
+  color: #f6765a;
+}
+
+.hero-text {
+  background-color: #23a7b5;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 50px;
+}
+.hero-text:hover {
+  color: #f6765a;
+}
+.hero-text h1, .hero-text p {
+  color: white;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  margin: 0;
+}
+.hero-text h1 {
+  margin-bottom: 0.5rem;
+}
+.hero-text:hover {
   color: #f6765a;
 }
 
