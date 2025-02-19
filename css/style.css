@@ -283,6 +283,10 @@ ul, ol {
   .hamburger-menu {
     display: block;
   }
+  .hero-text {
+    transition: transform 0.3s ease;
+    transform: scale(0.4);
+  }
   .sidebar-container {
     display: none;
   }
@@ -299,5 +303,9 @@ ul, ol {
 @media (min-width: 768px) {
   .hamburger-menu {
     display: none;
+  }
+  .hero-text {
+    transition: transform 0.3s ease;
+    transform: scale(0.7);
   }
 }/*# sourceMappingURL=style.css.map */

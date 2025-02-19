@@ -274,6 +274,11 @@
         display: block; // Show only on smaller screens
     }
 
+    .hero-text {
+        transition: transform 0.3s ease;
+        transform: scale(0.4);
+    }
+
 
     .sidebar-container {
         display: none; // Hide sidebar on small screens
@@ -297,6 +302,10 @@
     .hamburger-menu {
         display: none;
     }
-}
+    .hero-text {
+        transition: transform 0.3s ease;
+        transform: scale(0.7);
+    }
+    }
 
 
