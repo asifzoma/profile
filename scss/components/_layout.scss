@@ -2,14 +2,16 @@
 .page-wrapper {
     display: flex;
     min-height: 100vh;
+    background-color: $background-color;
 }
 
 // Sidebar (Fixed on Large Screens)
 .sidebar-container {
+    
     width: $sidebar-width;
     height: 100vh;
-    background-color: $primary-color;
-    color: $white;
+    background-color: $background-color;
+    color: $primary-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -19,7 +21,7 @@
     justify-content: space-between;
 
     .sidebar-header h3 a {
-        color: $white;
+        color: $primary-color;
         text-decoration: none;
         font-size: 24px;
 
@@ -36,7 +38,7 @@
             margin: 15px 0;
 
             a {
-                color: $white;
+                color: $primary-color;
                 text-decoration: none;
                 font-size: 18px;
             
@@ -52,7 +54,7 @@
         gap: 10px;
 
         a {
-            color: $white;
+            color: $primary-color;
             font-size: 20px;
             transition: color 0.3s ease;
 
@@ -64,22 +66,19 @@
 }
 
 .hero-text {
-    background-color: $primary-color; 
-    padding: 2rem;
+    background-color: #e9ebea; 
+     padding: 2rem;
     text-align: center;
     border-radius: 50px;
-    &:hover {
-        color: $secondary-color;
-    }
 
 
     h1, p {
-        color: white;
+        color: $primary-color;
         text-shadow: 
-            -2px -2px 0 #000,  
-             2px -2px 0 #000,
-            -2px  2px 0 #000,
-             2px  2px 0 #000; 
+            -2px -2px 0 $background-color,  
+             2px -2px 0 $background-color,
+            -2px  2px 0 $background-color,
+             2px  2px 0 $background-color; 
         margin: 0; 
     }
 
@@ -98,19 +97,25 @@
     flex: 1;
     padding: 20px;
     background-color: $background-color;
+    border-radius: 50px;
 }
 
 // Hero Image Section
 .image-container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background: url('../img/Web-Dev-Asif-Background.jpg') no-repeat center center/cover;
+    background: url('../img/Web-Dev-Asif-Background2.webp');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: $white;
+    color: $background-color;
     font-size: 2rem;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 // Banner Section
@@ -124,18 +129,18 @@
 
     p {
         font-size: 1.2rem;
-        color: $secondary-color;
+        color: $background-color;
     }
 }
 
 .SCS-scheme {
     @extend %box-styling-text-left;
-    
+        
 }
 
 // Code Example / Snippet Section
 .snippet {
-    @extend %box-styling;
+    @extend %box-styling-text-left;
     
 }
 
@@ -144,14 +149,21 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin-left: 20px;
 
     .project-card {
         flex: 1 1 calc(25% - 20px);
-        background-color: $white;
+        background-color: $background-color;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-align: center;
+        margin:8px;
+        &:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+            background-color: lighten($background-color, 10%);
+        }
 
         img {
             width: 100%;
@@ -197,15 +209,16 @@
         }
 
         button {
-            background-color: $primary-color;
-            color: $white;
+            background-color: #e9ebea;
+            color: $primary-color;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
 
             &:hover {
-                background-color: darken($primary-color, 10%);
+                transition: transform 0.3s ease;
+                background-color: darken($background-color, 10%);
             }
         }
         
@@ -217,8 +230,8 @@
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: $primary-color;
-    color: $white;
+    background-color: $background-color;
+    color: $primary-color;
 }
 
 // Hamburger Menu (Hidden by Default)
@@ -227,7 +240,7 @@
     position: relative;
     top: 15px;
     left: 15px;
-    background: $white;
+    background: $primary-color;
     border: none;
     width: 40px;
     height: 30px;
@@ -242,11 +255,11 @@
         display: block;
         width: 100%;
         height: 4px;
-        background-color: $primary-color;
+        background-color: $background-color;
         transition: all 0.3s ease;
     }
     &:hover {
-        background-color: $primary-color;
+        background-color: lighten($background-color, 10%);
     }
 
         
@@ -255,6 +268,13 @@
 
 // Responsive Styles
 @media (max-width: 768px) {
+
+
+    .hamburger-menu {
+        display: block; // Show only on smaller screens
+    }
+
+
     .sidebar-container {
         display: none; // Hide sidebar on small screens
     }
@@ -263,9 +283,6 @@
         margin-left: 0;
     }
 
-    .hamburger-menu {
-        display: flex; // Show only on smaller screens
-    }
 
     .portfolio-container {
         flex-direction: column;
